@@ -368,12 +368,13 @@
 
 
   <!-- モーダル本体 -->
-
+  <!-- モーダルの位置を決める場所 -->
 <div
   id="shareModal"
-  class="fixed inset-0 z-50 flex items-center justify-center"
+  class="fixed inset-0 z-50 flex items-start justify-center pt-10"
   style="display: none;"
 >
+	  <!-- モーダルの位置を決める場所ここまで -->
   <!-- 背景 -->
   <div
     class="absolute inset-0 bg-black/40"
@@ -386,8 +387,8 @@
   >
 
  <!-- 閉じるボタン -->
-   <button
-  onclick="function()"
+<button
+  onclick="toggleShareModal()"
   class="absolute top-4 right-4 text-gray-400 text-xl"
 >
   ×
