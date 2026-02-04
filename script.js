@@ -24,13 +24,13 @@ const questions = [
   { text: '理想の恋人像は？', optionA: '受け止めてくれる', optionB: '頼ってくれる', dimension: 'PK' },
   { text: '「好き」って言葉は？', optionA: '言われたい', optionB: '言いたい', dimension: 'PK' },
   
-  { text: 'フォーマルな場でドレスとセットアップどちらを着たいか', optionA: 'セットアップ', optionB: 'ドレス', dimension: 'GL' },
-  { text: '胸を強調しない服を選びがちか', optionA: '選びがち', optionB: '選ばない', dimension: 'GL' },
-  { text: '初対面で「かっこいい」「かわいい」どっちが嬉しいか', optionA: 'かっこいい', optionB: 'かわいい', dimension: 'GL' }
+  { text: 'フォーマルな場でどちらを着たい？', optionA: 'セットアップ', optionB: 'ドレス', dimension: 'GL' },
+  { text: '身体のラインを強調しない服を選びがちか', optionA: '選びがち', optionB: '選ばない', dimension: 'GL' },
+  { text: '初対面で言われて嬉しいのは？', optionA: 'かっこいい', optionB: 'かわいい', dimension: 'GL' }
   
-  { text: '自分のセクシャリティを隠している？', optionA: '隠していない', optionB: '隠している', dimension: 'OS' },
+  { text: '自分のセクシャリティを隠している？', optionA: '特に隠していない', optionB: '隠している', dimension: 'OS' },
   { text: '自分に対して他者評価が気になる？', optionA: '気にならない', optionB: '気になる', dimension: 'OS' },
-  { text: '恋人が付き合っていることを公表することに後ろめたさを感じる？', optionA: '感じない', optionB: '感じる', dimension: 'OS' },
+  { text: '同性(男性以外)の恋人がいることを公表するのに後ろめたさを感じる？', optionA: '感じない', optionB: '感じる', dimension: 'OS' },
 
 ];
 
@@ -287,7 +287,7 @@ console.log('characterTypes keys:', Object.keys(characterTypes));
 
   if (!type) {
     resultType.textContent = '診断エラー';
-    resultDescription.textContent = 'タイプデータが見つかりませんでした。';
+    resultDescription.textContent = 'タイプデータが見つかりませんでした...';
     return;
   }
 
