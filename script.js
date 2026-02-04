@@ -19,15 +19,19 @@ const questions = [
   { text: '夜のポジションにおいて攻めたい?攻められたい?', optionA: '攻めたい', optionB: '攻められたい', dimension: 'TC' },
   { text: '自分の容姿に関係なく下着姿を見られる方が好き?見る方が好き?', optionA: '見る方が好き', optionB: '見られる方が好き', dimension: 'TC' },
   { text: '自分はドS or ドM?', optionA: 'ドS', optionB: 'ドM', dimension: 'TC' },
+  
   { text: '恋人といる時の荷物は？', optionA: '持ってもらうのが嬉しい', optionB: '持つのが嬉しい', dimension: 'PK' },
   { text: '理想の恋人像は？', optionA: '受け止めてくれる', optionB: '頼ってくれる', dimension: 'PK' },
   { text: '「好き」って言葉は？', optionA: '言われたい', optionB: '言いたい', dimension: 'PK' },
-  { text: '自分のセクシャリティを隠している？', optionA: '隠していない', optionB: '隠している', dimension: 'OS' },
-  { text: '自分に対して他者評価が気になる？', optionA: '気にならない', optionB: '気になる', dimension: 'OS' },
-  { text: '恋人が付き合っていることを公表することに後ろめたさを感じる？', optionA: '感じない', optionB: '感じる', dimension: 'OS' },
+  
   { text: 'フォーマルな場でドレスとセットアップどちらを着たいか', optionA: 'セットアップ', optionB: 'ドレス', dimension: 'GL' },
   { text: '胸を強調しない服を選びがちか', optionA: '選びがち', optionB: '選ばない', dimension: 'GL' },
   { text: '初対面で「かっこいい」「かわいい」どっちが嬉しいか', optionA: 'かっこいい', optionB: 'かわいい', dimension: 'GL' }
+  
+  { text: '自分のセクシャリティを隠している？', optionA: '隠していない', optionB: '隠している', dimension: 'OS' },
+  { text: '自分に対して他者評価が気になる？', optionA: '気にならない', optionB: '気になる', dimension: 'OS' },
+  { text: '恋人が付き合っていることを公表することに後ろめたさを感じる？', optionA: '感じない', optionB: '感じる', dimension: 'OS' },
+
 ];
 
 // ========================
@@ -203,7 +207,7 @@ const characterTypes = {
 // 状態管理
 // ========================
 let currentQuestionIndex = 0;
-let scores = { TC: 0, PK: 0, OS: 0, GL: 0 };
+let scores = { TC: 0, PK: 0, GL: 0, OS: 0 };
 
 // ========================
 // DOM要素
@@ -270,10 +274,10 @@ function showResult() {
 
   const tc = scores.TC >= 0 ? 'T' : 'C';
   const pk = scores.PK >= 0 ? 'P' : 'K';
-  const os = scores.OS >= 0 ? 'O' : 'S';
-  const gl = scores.GL >= 0 ? 'G' : 'L';
+  const os = scores.OS >= 0 ? 'G' : 'L';
+  const gl = scores.GL >= 0 ? 'O' : 'S';
 
-  const typeKey = `${tc}${pk}${os}${gl}`;
+  const typeKey = `${tc}${pk}${gl}${os}`;
   
 console.log('resultType:', resultType);
 console.log('characterTypes keys:', Object.keys(characterTypes));
@@ -300,7 +304,7 @@ console.log('characterTypes keys:', Object.keys(characterTypes));
 function restartDiagnosis() {
   resultScreen.classList.add('hidden');
   startScreen.classList.remove('hidden');
-  scores = { TC: 0, PK: 0, OS: 0, GL: 0 };
+  scores = { TC: 0, PK: 0, GL: 0, OS: 0 };
 }
 
 // ========================
