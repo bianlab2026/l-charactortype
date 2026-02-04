@@ -263,19 +263,34 @@ function prevQuestion() {
   }
 }
 
+// 診断結果の分岐
 function showResult() {
   questionScreen.classList.add('hidden');
   resultScreen.classList.remove('hidden');
 
-  // シンプルにスコアでタイプ判定（例）
-  const typeKey = 'TPLO'; // 仮：今は固定。スコアで判定ロジック追加可能
+  const tc = scores.TC >= 0 ? 'T' : 'C';
+  const pk = scores.PK >= 0 ? 'P' : 'K';
+  const os = scores.OS >= 0 ? 'O' : 'S';
+  const gl = scores.GL >= 0 ? 'G' : 'L';
+
+  const typeKey = `${tc}${pk}${os}${gl}`;
   const type = characterTypes[typeKey];
 
-  resultType.textContent = type.name;
+  if (!type) {
+    resultType.textContent = '診断エラー';
+    resultDescription.textContent = 'タイプデータが見つかりませんでした。';
+    return;
+  }
+
+  resultType.textContent = `${type.suit} ${type.name}`;
   resultDescription.textContent = type.description;
 
-  characterIllustration.innerHTML = `<img src="${type.image}" alt="${type.name}" class="w-48 h-48 object-contain">`;
+  characterIllustration.innerHTML = `
+    <img src="${type.image}" alt="${type.name}" class="w-48 h-48 object-contain mb-4">
+  `;
 }
+
+// 診断結果の分岐ここまで
 
 function restartDiagnosis() {
   resultScreen.classList.add('hidden');
