@@ -22,20 +22,20 @@ const questions = [
   { text: '夜のポジションにおいて攻めたい?攻められたい?', optionA: '攻めたい', optionB: '攻められたい', dimension: 'TC' },
   { text: '自分の容姿に関係なく下着姿を見られる方が好き?見る方が好き?', optionA: '見る方が好き', optionB: '見られる方が好き', dimension: 'TC' },
   { text: '自分はドS or ドM?', optionA: 'ドS', optionB: 'ドM', dimension: 'TC' },
-  
+
   { text: '恋人といる時の荷物は？', optionA: '持ってもらうのが嬉しい', optionB: '持つのが嬉しい', dimension: 'PK' },
   { text: '理想の恋人像は？', optionA: '受け止めてくれる', optionB: '頼ってくれる', dimension: 'PK' },
   { text: '「好き」って言葉は？', optionA: '言われたい', optionB: '言いたい', dimension: 'PK' },
-  
+
   { text: 'フォーマルな場でどちらを着たい？', optionA: 'セットアップ', optionB: 'ドレス', dimension: 'GL' },
   { text: '身体のラインを強調しない服を選びがちか', optionA: '選びがち', optionB: '選ばない', dimension: 'GL' },
   { text: '初対面で言われて嬉しいのは？', optionA: 'かっこいい', optionB: 'かわいい', dimension: 'GL' },
-  
+
   { text: '自分のセクシャリティを隠している？', optionA: '特に隠していない', optionB: '隠している', dimension: 'OS' },
   { text: '自分に対して他者評価が気になる？', optionA: '気にならない', optionB: '気になる', dimension: 'OS' },
-  { text: '同性(男性以外)の恋人がいることを公表するのに後ろめたさを感じる？', optionA: '感じない', optionB: '感じる', dimension: 'OS' },
-
+  { text: '同性(男性以外)の恋人がいることを公表するのに後ろめたさを感じる？', optionA: '感じない', optionB: '感じる', dimension: 'OS' }
 ];
+
 
 // ========================
 // キャラクタータイプデータ
