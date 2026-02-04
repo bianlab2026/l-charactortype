@@ -274,6 +274,11 @@ function showResult() {
   const gl = scores.GL >= 0 ? 'G' : 'L';
 
   const typeKey = `${tc}${pk}${os}${gl}`;
+  
+console.log('resultType:', resultType);
+console.log('characterTypes keys:', Object.keys(characterTypes));
+
+  
   const type = characterTypes[typeKey];
 
   if (!type) {
