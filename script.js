@@ -275,10 +275,10 @@ function showResult() {
   questionScreen.classList.add('hidden');
   resultScreen.classList.remove('hidden');
 
-  const tc = scores.TC >= 0 ? 'T' : 'C';
-  const pk = scores.PK >= 0 ? 'P' : 'K';
-  const gl = scores.GL >= 0 ? 'G' : 'L';
-  const os = scores.OS >= 0 ? 'O' : 'S';
+const tc = scores.TC > 0 ? 'T' : 'C';
+const pk = scores.PK > 0 ? 'P' : 'K';
+const gl = scores.GL > 0 ? 'G' : 'L';
+const os = scores.OS > 0 ? 'O' : 'S';
 
   const typeKey = `${tc}${pk}${gl}${os}`;
 
