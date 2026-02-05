@@ -14,8 +14,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
 
   <!-- CSS外部化用リンク -->
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="style.css">
 
+  <!-- SDK -->
+  <script src="/_sdk/element_sdk.js"></script>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
 </head>
 
 <body class="h-screen">
@@ -82,38 +85,17 @@
         </div>
 
         <!-- Answer Options -->
- <div class="mb-8">
-   <div class="flex justify-between items-center mb-4 px-4">
-
-    <button
-      onclick="selectAnswer(0)"
-      class="text-sm font-bold"
-      style="color: #e91e63;"
-    >
-      <span id="option-a-label">攻めたい</span>
-      </button>
-
-    <button
-      onclick="selectAnswer(1)"
-      class="text-sm font-bold"
-      style="color: #e91e63;"
-    >
-      <span id="option-b-label">攻められたい</span>
-      </button>
-
-  </div>
-</div>
-
-
-          
-
-       
+        <div class="mb-8">
+          <div class="flex justify-between items-center mb-4 px-4">
+            <span id="option-a-label" class="text-sm font-bold" style="color: #e91e63;">攻めたい</span>
+            <span id="option-b-label" class="text-sm font-bold" style="color: #e91e63;">攻められたい</span>
+          </div>
           <div class="flex justify-center items-center gap-2">
-            <button class="answer-btn" onclick="selectAnswer(0)" data-index="0" id="btn-0">♡</button>
-            <button class="answer-btn" onclick="selectAnswer(1)" data-index="1" id="btn-1">♡</button>
-            <button class="answer-btn" onclick="selectAnswer(2)" data-index="2" id="btn-2">♡</button>
-            <button class="answer-btn" onclick="selectAnswer(3)" data-index="3" id="btn-3">♡</button>
-            <button class="answer-btn" onclick="selectAnswer(4)" data-index="4" id="btn-4">♡</button>
+            <button class="answer-btn" onclick="selectAnswer(0)" data-index="0" id="btn-0">...</button>
+            <button class="answer-btn" onclick="selectAnswer(1)" data-index="1" id="btn-1">...</button>
+            <button class="answer-btn" onclick="selectAnswer(2)" data-index="2" id="btn-2">...</button>
+            <button class="answer-btn" onclick="selectAnswer(3)" data-index="3" id="btn-3">...</button>
+            <button class="answer-btn" onclick="selectAnswer(4)" data-index="4" id="btn-4">...</button>
           </div>
         </div>
 
@@ -126,36 +108,11 @@
       </div>
     </div>
 
-<!-- Result Screen -->
-<div
-  id="result-screen"
-  class="w-full"
-  style="display: none; margin: 0; padding: 1rem; background: linear-gradient(135deg, #fce4ec 0%, #f3e5f5 50%, #e8eaf6 100%);"
->
-  <!-- 診断タイプ -->
-  <h2 id="result-type" style="margin: 0 0 1rem 0; text-align:center;"></h2>
- 
-  <!-- キャラクターイラスト -->
-  <div id="character-illustration" style="margin-bottom: 1rem;"></div>
-  
-  <!-- 診断説明文 -->
-  <p id="result-description" style="margin: 0 0 1rem 0; text-align:center;"></p>
+    <!-- Result Screen -->
+    <div id="result-screen" class="min-h-full w-full flex-col items-center p-6 hidden overflow-auto" style="background: linear-gradient(135deg, #fce4ec 0%, #f3e5f5 50%, #e8eaf6 100%);">
+      <!-- Result content here -->
+    </div>
 
-  <!-- 相性表示 -->
-<div id="good-match" style="margin-bottom: 0.5rem; font-weight:600; color:#ec407a; text-align:center;"></div>
-  <div id="bad-match" style="margin-bottom: 1rem; color:#9e9e9e; text-align:center;"></div>
-
-  <!-- ボタン類 -->
-  <div style="display:flex; flex-direction:column; align-items:center; gap:0.5rem;">
-    <button onclick="restartDiagnosis()" style="padding:0.75rem 1.5rem; border-radius:9999px; background:#fff; box-shadow:0 4px 12px rgba(0,0,0,0.1);">もう一度診断する</button>
-    <button id="share-button" onclick="openShareModal()" style="padding:0.75rem 1.5rem; border-radius:9999px; background:#ec407a; color:#fff; box-shadow:0 4px 12px rgba(0,0,0,0.1);">シェアする</button>
-  </div>
-</div>
-
-  
-<!-- Result Screenここまで -->
-
-    
     <!-- Share Modal -->
     <div id="shareModal" class="fixed inset-0 z-50 flex items-start justify-center pt-0" style="display: none;">
       <div class="absolute inset-0 bg-black/40" onclick="toggleShareModal()"></div>
@@ -173,7 +130,6 @@
   </div>
 
   <!-- JS外部化用リンク -->
- <script src="./script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
