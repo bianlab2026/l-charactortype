@@ -317,27 +317,34 @@ document.addEventListener('DOMContentLoaded', () => {
   const startScreen = document.getElementById('start-screen');
   const shareModal = document.getElementById('shareModal');
 
-  // 診断リスタート
-  function restartDiagnosis() {
-    resultScreen.classList.add('hidden');
-    startScreen.classList.remove('hidden');
-    scores = { TC: 0, PK: 0, GL: 0, OS: 0 };
-  }
+// ========================
+// 診断結果リスタート
+// ========================
+function restartDiagnosis() {
+  const resultScreen = document.getElementById('result-screen');
+  const startScreen = document.getElementById('start-screen');
+  resultScreen.classList.add('hidden');
+  startScreen.classList.remove('hidden');
+  scores = { TC: 0, PK: 0, GL: 0, OS: 0 }; // グローバル scores をリセット
+}
 
-  // シェアモーダル開閉
-  function openShareModal() {
-    if (shareModal) shareModal.style.display = 'flex';
-  }
+// ========================
+// シェアモーダル
+// ========================
+function openShareModal() {
+  const shareModal = document.getElementById('shareModal');
+  if (shareModal) shareModal.style.display = 'flex';
+}
 
-  function toggleShareModal() {
-    if (!shareModal) return;
-    shareModal.style.display = shareModal.style.display === 'none' ? 'flex' : 'none';
-  }
+function toggleShareModal() {
+  const shareModal = document.getElementById('shareModal');
+  if (!shareModal) return;
+  shareModal.style.display = shareModal.style.display === 'none' ? 'flex' : 'none';
+}
 
-  // 関数を window に登録（HTML の onclick 用）
-  window.restartDiagnosis = restartDiagnosis;
-  window.openShareModal = openShareModal;
-  window.toggleShareModal = toggleShareModal;
-});
+// 関数をグローバル化（HTML onclick で呼ぶ用）
+window.restartDiagnosis = restartDiagnosis;
+window.openShareModal = openShareModal;
+window.toggleShareModal = toggleShareModal;
 
 
