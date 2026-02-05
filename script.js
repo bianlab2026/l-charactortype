@@ -274,7 +274,8 @@ function prevQuestion() {
 }
 
 // 診断結果の分岐
-function showResult() {
+function showResult() 
+{
   questionScreen.classList.add('hidden');
   resultScreen.classList.remove('hidden');
 
@@ -301,6 +302,10 @@ const os = scores.OS > 0 ? 'O' : 'S';
   characterIllustration.innerHTML = `
     <img src="${type.image}" alt="${type.name}" class="w-48 h-48 object-contain mb-4">
   `;
+//2/5 15:48追加
+  resultScreen.style.display = 'flex';
+resultScreen.scrollIntoView({ behavior: 'smooth' });
+//2/5 15:48追加ここまで
 }
 
 
