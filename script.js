@@ -333,3 +333,12 @@ function copyUrl() {
 window.startDiagnosis = startDiagnosis;
 window.selectAnswer = selectAnswer;
 window.restartDiagnosis = restartDiagnosis;
+
+// 2/5 15:45 オープンシェアモーダル追加
+function openShareModal() {
+  shareModal.style.display = 'flex';
+}
+
+window.openShareModal = openShareModal;
+window.toggleShareModal = toggleShareModal;
+
