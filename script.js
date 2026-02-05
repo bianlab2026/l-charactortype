@@ -323,9 +323,17 @@ document.addEventListener('DOMContentLoaded', () => {
 function restartDiagnosis() {
   const resultScreen = document.getElementById('result-screen');
   const startScreen = document.getElementById('start-screen');
-  resultScreen.classList.add('hidden');
-  startScreen.classList.remove('hidden');
-  scores = { TC: 0, PK: 0, GL: 0, OS: 0 }; // グローバル scores をリセット
+
+  if (resultScreen) resultScreen.classList.add('hidden');
+  if (startScreen) startScreen.classList.remove('hidden');
+
+  // スコアをリセット
+  if (typeof scores !== 'undefined') {
+    scores = { TC: 0, PK: 0, GL: 0, OS: 0 };
+  }
+}
+window.restartDiagnosis = restartDiagnosis;
+
 }
 
 // ========================
