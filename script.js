@@ -216,7 +216,7 @@ let currentQuestionIndex = 0;
 let scores = { TC: 0, PK: 0, GL: 0, OS: 0 };
 
 // ========================
-// DOM要素
+// DOM取得
 // ========================
 const startScreen = document.getElementById('start-screen');
 const questionScreen = document.getElementById('question-screen');
@@ -230,16 +230,15 @@ const progressText = document.getElementById('progress-text');
 const resultType = document.getElementById('result-type');
 const resultDescription = document.getElementById('result-description');
 const characterIllustration = document.getElementById('character-illustration');
+const shareModal = document.getElementById('shareModal');
 
 // ========================
 // 診断開始
 // ========================
 function startDiagnosis() {
-  const startScreen = document.getElementById('start-screen');
-  const questionScreen = document.getElementById('question-screen');
-  if (startScreen) startScreen.classList.add('hidden');
-  if (questionScreen) questionScreen.classList.remove('hidden');
-
+  startScreen.classList.add('hidden');
+  questionScreen.classList.remove('hidden');
+  resultScreen.style.display = 'none';
   currentQuestionIndex = 0;
   updateQuestion();
 }
@@ -249,21 +248,20 @@ window.startDiagnosis = startDiagnosis;
 // 診断リスタート
 // ========================
 function restartDiagnosis() {
-  const resultScreen = document.getElementById('result-screen');
-  const startScreen = document.getElementById('start-screen');
-
-  if (resultScreen) resultScreen.classList.add('hidden');
-  if (startScreen) startScreen.classList.remove('hidden');
-
-  // スコアをリセット
+  // スコアと質問インデックスをリセット
   scores = { TC: 0, PK: 0, GL: 0, OS: 0 };
+  currentQuestionIndex = 0;
+
+  // 画面切り替え
+  resultScreen.style.display = 'none';
+  questionScreen.classList.add('hidden');
+  startScreen.classList.remove('hidden');
 }
 window.restartDiagnosis = restartDiagnosis;
 
 // ========================
 // シェアモーダル
 // ========================
-const shareModal = document.getElementById('shareModal');
 function openShareModal() {
   if (shareModal) shareModal.style.display = 'flex';
 }
@@ -273,5 +271,6 @@ function toggleShareModal() {
 }
 window.openShareModal = openShareModal;
 window.toggleShareModal = toggleShareModal;
+
 
 
